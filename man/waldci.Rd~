@@ -1,0 +1,13 @@
+\name{waldci}
+\alias{waldci}
+\title{
+  Internal function for Wald intervals
+}
+\description{
+  Internal function for wald intervals in method \code{\link{asci}} in
+  function \code{\link{sbci}}
+}
+\note{
+  Internal function. Use function \code{\link{sbci}} instead.
+}
+\keyword{ misc }

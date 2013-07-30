@@ -1,0 +1,21 @@
+\name{WY}
+\alias{WY}
+\title{
+  Internal function for simultaneous bootstrap confidence intervals
+}
+\description{
+  Internal function for simultaneous bootstrap confidence intervals
+  based on resampled residuals
+}
+\usage{
+WY(X, f, theta, cmat, conf.level, alternative, R, args)
+}
+\references{
+  Westfall, P. H. and Young, S. S. (1993) \emph{Resampling-Based
+    Multiple Testing: Examples and Methods for \eqn{p}--Value
+    Adjustment}. New York: Wiley.
+}
+\note{
+  Only internal function. Use function \code{\link{sbci}} instead
+}
+\keyword{ htest }

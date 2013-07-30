@@ -1,0 +1,15 @@
+		CHANGES in `simboot' VERSION 0.1-66
+
+    -		Corrected issue in mcpHill when estimating a single index
+
+
+		CHANGES in `simboot' VERSION 0.1-65
+
+    -		Added data set Bacteria
+
+
+		CHANGES in `simboot' VERSION 0.1-6
+
+    -		Added function mcpHill
+
+

@@ -1,0 +1,61 @@
+\name{simbootci-package}
+\alias{simbootci-package}
+\alias{simbootci}
+\docType{package}
+\title{
+  Simultaneous Bootstrap and Asymptotic Confidence Intervals for
+  Diversity Indices
+}
+\description{
+  This package provides calculation of simultaneous bootstrap and
+  asymptotic confidence intervals for diversity indices, namely the
+  Shannon and Simpson index. Possible multiple-comparison types are
+  Dunnett and Tukey, as well as self-defined contrast matrices.
+}
+\details{
+\tabular{ll}{
+  Package: \tab simbootci\cr
+  Type: \tab Package\cr
+  Version: \tab 0.1-2\cr
+  Date: \tab 2010-08-16\cr
+  License: \tab GPL-2\cr
+  LazyLoad: \tab yes\cr
+}
+}
+\author{
+  Ralph Scherer
+  Maintainer: Ralph Scherer <scherer.ralph@mh-hannover.de>
+}
+\references{
+  Westfall, P. H. and Young, S. S. (1993) Resampling-Based
+    Multiple Testing: Examples and Methods for \eqn{p}--Value
+    Adjustment. New York: Wiley.
+
+  Corresponding method \code{\link{sbci}} with method \code{\link{WYci}}
+
+  Besag, J., Green, P. J., Higdon, D., Mengersen, K. (1995)
+  Bayesian computation and stochastic systems (with discussion)
+  . \emph{Statistical Science}, 10, 3--66.
+
+  Corresponding method \code{\link{sbci}} with method \code{\link{rpci}}
+
+  Beran, R. (1988) Balanced simultaneous confidence
+    sets. \emph{Journal of the American Statistical Association}, 83, 679--686.
+
+   Corresponding method \code{\link{sbci}} with method \code{\link{tsci}}
+
+  Fritsch, K. S., Hsu, J. C. (1999) Multiple comparison of
+    entropies with application to dinosaur biodiversity. \emph{Biometrics},
+  55, 4, 1300--1305.
+
+  Rogers, J. A., Hsu, J. C. (2001) Multiple comparisons of
+    biodiversity. \emph{Biometrical Journal}, 43, 5, 617--625.
+
+  Corresponding method \code{\link{sbci}} with method \code{\link{asci}}
+
+  Scherer, R. (2010) Simultaneous Confidence Intervals for Biodiversity
+    Indices with Application to Overdispersed Multinomial Count Data
+  \url{http://www.biostat.uni-hannover.de/research/thesis/MScScherer20100525.pdf
+  }
+  }
+\keyword{ package }

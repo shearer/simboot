@@ -1,0 +1,88 @@
+tsht <- 
+function(X, f, theta, cmat, conf.level, alternative, R, args)
+{ 
+  bargs <- args
+  XOBS <- as.data.frame(X)
+  estindsum <- function(X, f, cmat, theta)
+    {
+      estsum <- theta(X = X, f = f)
+      SE <- sqrt(estsum$varest)
+      estC <- (cmat %*% estsum$estimate)
+      varC <- (cmat^2) %*% (estsum$varest)
+      teststat <- estC/ sqrt(varC)
+      return(
+             list(
+                  teststat = teststat,
+                  estC = estC,
+                  varC = varC,
+                  cmat = cmat
+                  )
+             )
+    }
+  EST <- estindsum(X = XOBS, f = f, cmat = cmat, theta = theta)
+  OBS <- EST$estC
+  BTeststat <- function(X, i, f, cmat, obs)
+    {
+      XNEW <- as.data.frame(X[i, ])
+      est <- estindsum(X = XNEW, f = f, cmat = cmat, theta = theta)
+      Teststat <- (est$estC - obs)/ sqrt(est$varC)
+      return(Teststat)
+    }
+  bargs$data <- as.data.frame(X)
+  bargs$statistic <- BTeststat
+  bargs$strata = f
+  bargs$f <- f
+  bargs$cmat <- cmat
+  bargs$obs <- OBS
+  bargs$R <- R
+  if(is.null(bargs$R))
+    {
+      bargs$R <- 999
+    }
+  if(is.null(bargs$sim))
+    {
+      bargs$sim <- "ordinary"
+    }
+  if(is.null(bargs$stype))
+    {
+      bargs$stype <- "i"
+    }
+  bootout <- do.call("boot", bargs)
+  teststat<-bootout$t
+  maxabsT <- apply(X = bootout$t, MARGIN = 1, FUN = function(x)
+                   {
+                     max(abs(x), na.rm = TRUE)
+                   })
+  maxT <- apply(X = bootout$t, MARGIN = 1, FUN = function(x)
+                {
+                  max(x, na.rm = TRUE)
+                })
+  minT <- apply(X = bootout$t, MARGIN = 1, FUN = function(x)
+                {
+                  min(x, na.rm = TRUE)
+                })
+  alpha <- 1 - conf.level
+  switch(alternative, 
+         "two.sided" =
+         {
+           quant <- quantile(maxabsT, probs = 1 - alpha, na.rm = TRUE)
+           LOWER <- EST$estC - quant * sqrt(EST$varC)
+           UPPER <- EST$estC + quant * sqrt(EST$varC)
+         },
+         "less" =
+         {
+           quant <- quantile(maxT, probs = 1-alpha, na.rm = TRUE)
+           LOWER <- NA
+           UPPER <- EST$estC + quant * sqrt(EST$varC)
+         },
+         "greater" =
+         {
+           quant <- quantile(minT, probs = alpha, na.rm = TRUE)
+           LOWER <- EST$estC + quant * sqrt(EST$varC)
+           UPPER <- NA
+         })
+  conf.int <- cbind(EST$estC, LOWER, UPPER)
+  colnames(conf.int) <- cbind("estimate", "lower", "upper")
+  return(list(conf.int = conf.int, conf.level = conf.level, alternative = alternative))
+}
+

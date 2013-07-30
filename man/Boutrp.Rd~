@@ -1,0 +1,12 @@
+\name{Boutrp}
+\alias{Boutrp}
+\title{
+  Internal function
+}
+\description{
+  Internal function for method rpci in function sbci
+}
+\note{
+  Only for internal use.
+}
+\keyword{ misc }
