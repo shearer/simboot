@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="simboot : Simultaneous comparisons of diversity indices using R" />
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>simboot by shearer</title>
+    <title>simboot</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>simboot</h1>
-        <h2>Simultaneous comparisons of diversity indices using R</h2>
-        <a href="https://github.com/shearer/simboot" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/shearer/simboot">View on GitHub</a>
+
+          <h1 id="project_title">simboot</h1>
+          <h2 id="project_tagline">Simultaneous comparisons of diversity indices using R</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/shearer/simboot/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/shearer/simboot/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
 <a name="simboot" class="anchor" href="#simboot"><span class="octicon octicon-link"></span></a><a href="https://github.com/shearer/simboot">simboot</a>
 </h3>
 
 <h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<p>For installation, please download the <a href="http://cran.r-project.org/">newest R-version</a> for your operation system. Then use the package manager to install the <a href="http://cran.r-project.org/web/packages/simboot/index.html">simboot package</a> or run the following command inside R:
- <code>install.packages("simboot")</code></p>
+<p>For installation, please download the <a href="http://cran.r-project.org/">newest R-version</a> for your operation system. Then use the package manager to install the <a href="http://cran.r-project.org/web/packages/simboot/index.html">simboot package</a> or run the following command inside R:</p>
+
+<p><code>install.packages("simboot")</code></p>
 
 <h2>
 <a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h2>
@@ -46,11 +50,13 @@
 <h2>
 <a name="corresponding-publications" class="anchor" href="#corresponding-publications"><span class="octicon octicon-link"></span></a>Corresponding publications</h2>
 
-<p>The simultaneous confidence intervals for Shannon's and Simpson's indices are described and compared in the <a href="http://www.ncbi.nlm.nih.gov/pubmed/23401312">SCfDI paper</a>:
-Scherer, R., Schaarschmidt, F., Prescher, S. and Priesnitz, K. U. (2013), Simultaneous confidence intervals for comparing biodiversity indices estimated from overdispersed count data. Biom. J., 55: 246–263. doi: 10.1002/bimj.201200157</p>
+<p>The simultaneous confidence intervals for Shannon's and Simpson's indices are described and compared in the <a href="http://www.ncbi.nlm.nih.gov/pubmed/23401312">SCfDI paper</a>:</p>
 
-<p>The comparison of two or more groups of observations, while simultaneously testing a user-defined selection of a number of 'true' diversity measures is published in the <a href="http://www.ncbi.nlm.nih.gov/pubmed/22934781">Hill paper</a>:
-Pallmann, P., Schaarschmidt, F., Hothorn, L. A., Fischer, C., Nacke, H., Priesnitz, K. U. and Schork, N. J. (2012), Assessing group differences in biodiversity by simultaneously testing a user-defined selection of diversity indices. Molecular Ecology Resources, 12: 1068–1078. doi: 10.1111/1755-0998.12004</p>
+<p>Scherer, R., Schaarschmidt, F., Prescher, S. and Priesnitz, K. U. (2013), Simultaneous confidence intervals for comparing biodiversity indices estimated from overdispersed count data. Biom. J., 55: 246–263. doi: 10.1002/bimj.201200157</p>
+
+<p>The comparison of two or more groups of observations, while simultaneously testing a user-defined selection of a number of 'true' diversity measures is published in the <a href="http://www.ncbi.nlm.nih.gov/pubmed/22934781">Hill paper</a>:</p>
+
+<p>Pallmann, P., Schaarschmidt, F., Hothorn, L. A., Fischer, C., Nacke, H., Priesnitz, K. U. and Schork, N. J. (2012), Assessing group differences in biodiversity by simultaneously testing a user-defined selection of diversity indices. Molecular Ecology Resources, 12: 1068–1078. doi: 10.1111/1755-0998.12004</p>
 
 <h2>
 <a name="questions-and-issues" class="anchor" href="#questions-and-issues"><span class="octicon octicon-link"></span></a>Questions and issues</h2>
@@ -62,30 +68,23 @@ Pallmann, P., Schaarschmidt, F., Hothorn, L. A., Fischer, C., Nacke, H., Priesni
 
 <p>To install the development version of the simboot package, it is easiest to use the <a href="http://cran.r-project.org/web/packages/devtools/index.html">devtools</a> package:</p>
 
-<pre><code>install.packages("devtools")  # if needed..
-library(devtools)
-install_github("simboot", "shearer")
-library(simboot)
+<pre><code>`install.packages("devtools")  # if needed..
+ library(devtools)
+ install_github("simboot", "shearer")
+ library(simboot)`
 </code></pre>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/shearer/simboot/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/shearer/simboot/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/shearer/simboot"></a> is maintained by <a href="https://github.com/shearer">shearer</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
 
-  
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">simboot maintained by <a href="https://github.com/shearer">shearer</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
