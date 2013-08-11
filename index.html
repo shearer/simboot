@@ -40,7 +40,9 @@
 
 <p>For installation, please download the <a href="http://cran.r-project.org/">newest R-version</a> for your operation system. Then use the package manager to install the <a href="http://cran.r-project.org/web/packages/simboot/index.html">simboot package</a> or run the following command inside R:</p>
 
-<p><code>install.packages("simboot")</code></p>
+<pre><code>install.packages("simboot")
+library(simboot)
+</code></pre>
 
 <h2>
 <a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h2>
@@ -68,10 +70,10 @@
 
 <p>To install the development version of the simboot package, it is easiest to use the <a href="http://cran.r-project.org/web/packages/devtools/index.html">devtools</a> package:</p>
 
-<pre><code>`install.packages("devtools")  # if needed..
- library(devtools)
- install_github("simboot", "shearer")
- library(simboot)`
+<pre><code>install.packages("devtools")  # if needed..
+library(devtools)
+install_github("simboot", "shearer")
+library(simboot)
 </code></pre>
       </section>
     </div>
