@@ -93,6 +93,12 @@ sbdiv(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett",
   \item{alternative }{Pre-specified alternative}
 }
 \references{
+  Scherer, R. and Schaarschmidt, F. (2013) Simultaneous confidence intervals
+  for comparing biodiversity indices estimated from overdispersed count
+  data. \emph{Biometrical Journal} 55, 246--263.
+
+  Evaluation of the methods in \code{\link{sbdiv}}
+  
   Westfall, P. H. and Young, S. S. (1993) Resampling-Based
     Multiple Testing: Examples and Methods for \eqn{p}--Value
     Adjustment. New York: Wiley.
@@ -119,9 +125,6 @@ sbdiv(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett",
 
   Corresponding method \code{sbdiv} with method \code{\link{asht}}
 
-  Scherer, R. (2010) Simultaneous Confidence Intervals for Biodiversity
-    Indices with Application to Overdispersed Multinomial Count Data
-  \url{http://www.biostat.uni-hannover.de/thesis.html}
 }
 \author{
 Ralph Scherer

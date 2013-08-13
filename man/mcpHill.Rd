@@ -72,9 +72,12 @@
   compared.  }
 
 \references{
+  \emph{Pallmann, P. et al. (2012)} Assessing group differences in
+  biodiversity by simultaneously testing a user-defined selection of
+  diversity indices. Molecular ecology resources 12, 1068--78.
   
   \emph{Jost, L. (2008)} G(ST) and its relatives do not measure
-  differentiation. Molecular Ecology, 17, 4015-4026.
+  differentiation. Molecular Ecology, 17, 4015--4026.
 
   \emph{Westfall, P.H. and Young S.S. (1993)} Resampling-based multiple
   testing: examples and methods for p-value adjustment. New York: Wiley.

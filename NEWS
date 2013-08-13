@@ -1,3 +1,13 @@
+  	CHANGES in `simboot' VERSION 0.2-2
+
+    -		Added github url
+
+
+		CHANGES in `simboot' VERSION 0.2-0
+
+    -		Added publication citations for methods in sbdiv and mcpHill
+
+
 		CHANGES in `simboot' VERSION 0.1-66
 
     -		Corrected issue in mcpHill when estimating a single index

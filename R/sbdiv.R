@@ -1,78 +1,74 @@
-Content-Type: text/enriched
-Text-Width: 70
-
-<x-color><param>Blue1</param>sbdiv</x-color> <x-color><param>dark cyan</param><<-</x-color>
-  <x-color><param>Purple</param>function</x-color>(X, f, theta = c(<x-color><param>VioletRed4</param>"Shannon"</x-color>, <x-color><param>VioletRed4</param>"Simpson"</x-color>), type = c(<x-color><param>VioletRed4</param>"Dunnett"</x-color>, <x-color><param>VioletRed4</param>"Tukey"</x-color>, <x-color><param>VioletRed4</param>"Sequen"</x-color>, <x-color><param>VioletRed4</param>"AVE"</x-color>, <x-color><param>VioletRed4</param>"Changepoint"</x-color>, <x-color><param>VioletRed4</param>"Williams"</x-color>, <x-color><param>VioletRed4</param>"Marcus"</x-color>, <x-color><param>VioletRed4</param>"McDermott"</x-color>, <x-color><param>VioletRed4</param>"UmbrellaWilliams"</x-color>, <x-color><param>VioletRed4</param>"GrandMean"</x-color>), cmat = <x-color><param>ForestGreen</param>NULL</x-color>, method = c(<x-color><param>VioletRed4</param>"WYht"</x-color>, <x-color><param>VioletRed4</param>"tsht"</x-color>, <x-color><param>VioletRed4</param>"rpht"</x-color>, <x-color><param>VioletRed4</param>"asht"</x-color>), conf.level = 0.95, alternative = c(<x-color><param>VioletRed4</param>"two.sided"</x-color>, <x-color><param>VioletRed4</param>"less"</x-color>, <x-color><param>VioletRed4</param>"greater"</x-color>), R = 2000, base = 1,...)
+sbdiv <-
+  function(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett", "Tukey", "Sequen", "AVE", "Changepoint", "Williams", "Marcus", "McDermott", "UmbrellaWilliams", "GrandMean"), cmat = NULL, method = c("WYht", "tsht", "rpht", "asht"), conf.level = 0.95, alternative = c("two.sided", "less", "greater"), R = 2000, base = 1,...)
   {
-    args <x-color><param>dark cyan</param><<-</x-color> list(...)
-    theta <x-color><param>dark cyan</param><<-</x-color> match.arg(theta)
-    type <x-color><param>dark cyan</param><<-</x-color> match.arg(type)
-    method <x-color><param>dark cyan</param><<-</x-color> match.arg(method)
-    alternative <x-color><param>dark cyan</param><<-</x-color> match.arg(alternative)
-    n <x-color><param>dark cyan</param><<-</x-color> unlist(lapply(split(x = X, f = f), length))
-    <x-color><param>Purple</param>if</x-color> (length(conf.level) != 1) {
-      <x-color><param>Purple</param>stop</x-color>(<x-color><param>VioletRed4</param>"argument conf.level should be a single numeric value"</x-color>)
+    args <- list(...)
+    theta <- match.arg(theta)
+    type <- match.arg(type)
+    method <- match.arg(method)
+    alternative <- match.arg(alternative)
+    n <- unlist(lapply(split(x = X, f = f), length))
+    if (length(conf.level) != 1) {
+      stop("argument conf.level should be a single numeric value")
     }
-    <x-color><param>Purple</param>if</x-color> (conf.level <<= 0.5 | conf.level >= 1) {
-      <x-color><param>Purple</param>stop</x-color>(<x-color><param>VioletRed4</param>"argument conf.level should be a single numeric value between 0.5 and 1"</x-color>)
+    if (conf.level <= 0.5 | conf.level >= 1) {
+      stop("argument conf.level should be a single numeric value between 0.5 and 1")
     }
-    <x-color><param>Purple</param>if</x-color> (!is.numeric(conf.level)) {
-      <x-color><param>Purple</param>stop</x-color>(<x-color><param>VioletRed4</param>"argument conf.level should be a single numeric value"</x-color>)
-  }
-    <x-color><param>Purple</param>if</x-color> (!is.data.frame(X)) {
-      <x-color><param>Purple</param>stop</x-color>(<x-color><param>VioletRed4</param>"X must be of an object of class 'data.frame'"</x-color>)
+    if (!is.numeric(conf.level)) {
+      stop("argument conf.level should be a single numeric value")
     }
-    <x-color><param>Purple</param>if</x-color> (!is.factor(f)) {
-      f <x-color><param>dark cyan</param><<-</x-color> as.factor(f)
+    if (!is.data.frame(X)) {
+      stop("X must be of an object of class 'data.frame'")
     }
-    k <x-color><param>dark cyan</param><<-</x-color> length(levels(f))
-    <x-color><param>Purple</param>if</x-color> (k <<= 1) {
-      <x-color><param>Purple</param>stop</x-color>(<x-color><param>VioletRed4</param>"The factor variable f should have at least 2 levels to be compared"</x-color>)
+    if (!is.factor(f)) {
+      f <- as.factor(f)
     }
-    <x-color><param>Purple</param>if</x-color> (is.null(cmat))
+    k <- length(levels(f))
+    if (k <= 1) {
+      stop("The factor variable f should have at least 2 levels to be compared")
+    }
+    if (is.null(cmat))
       {
-        cmat <x-color><param>dark cyan</param><<-</x-color> contrMat(n = n, type = type, base = base)
+        cmat <- contrMat(n = n, type = type, base = base)
       }
-    <x-color><param>Purple</param>else</x-color> {
-      <x-color><param>Purple</param>if</x-color> (ncol(cmat) != k) {
-        <x-color><param>Purple</param>stop</x-color>(<x-color><param>VioletRed4</param>"Number of columns in cmat should be the same as the number of levels in f"</x-color>)
+    else {
+      if (ncol(cmat) != k) {
+        stop("Number of columns in cmat should be the same as the number of levels in f")
       }
     }
-    <x-color><param>Purple</param>switch</x-color>(theta,
-           <x-color><param>VioletRed4</param>"Shannon"</x-color> = {
-             <x-color><param>Purple</param>switch</x-color>(method,
-                    <x-color><param>VioletRed4</param>"WYht"</x-color> = {
-                      output <x-color><param>dark cyan</param><<-</x-color> WYht(X = X, f = f, theta = estShannonWY, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
+    switch(theta,
+           "Shannon" = {
+             switch(method,
+                    "WYht" = {
+                      output <- WYht(X = X, f = f, theta = estShannonWY, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
                     },
-                    <x-color><param>VioletRed4</param>"tsht"</x-color> = {
-                      output <x-color><param>dark cyan</param><<-</x-color> tsht(X = X, f = f, theta = estShannonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
+                    "tsht" = {
+                      output <- tsht(X = X, f = f, theta = estShannonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
                     },
-                    <x-color><param>VioletRed4</param>"rpht"</x-color> = {
-                      output <x-color><param>dark cyan</param><<-</x-color> rpht(X = X, f = f, theta = estShannonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
+                    "rpht" = {
+                      output <- rpht(X = X, f = f, theta = estShannonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
                     },
-                    <x-color><param>VioletRed4</param>"asht"</x-color> = {
-                      output <x-color><param>dark cyan</param><<-</x-color> asht(X = X, f = f, theta = estShannonf, cmat = cmat, conf.level = conf.level, alternative = alternative, args = args)
+                    "asht" = {
+                      output <- asht(X = X, f = f, theta = estShannonf, cmat = cmat, conf.level = conf.level, alternative = alternative, args = args)
                     }
                     )
            },
            "Simpson" = {
              switch(method,
                     "WYht" = {
-                      output <<- WYht(X = X, f = f, theta = estSimpson, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
+                      output <- WYht(X = X, f = f, theta = estSimpson, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
                     },
                     "tsht" = {
-                      output <<- tsht(X = X, f = f, theta = estSimpsonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
+                      output <- tsht(X = X, f = f, theta = estSimpsonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
                     },
                     "rpht" = {
-                      output <<- rpht(X = X, f = f, theta = estSimpsonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
+                      output <- rpht(X = X, f = f, theta = estSimpsonf, cmat = cmat, conf.level = conf.level, alternative = alternative, R = R, args = args)
                     },
                     "asht" = {
-                      output <<- asht(X = X, f = f, theta = estSimpsonf, cmat = cmat, conf.level = conf.level, alternative = alternative, args = args)
+                      output <- asht(X = X, f = f, theta = estSimpsonf, cmat = cmat, conf.level = conf.level, alternative = alternative, args = args)
                     }
                     )
            }
            )
     return(output)
   }
-
 

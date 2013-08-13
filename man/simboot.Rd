@@ -21,9 +21,9 @@
 \tabular{ll}{
   Package: \tab simboot\cr
   Type: \tab Package\cr
-  Version: \tab 0.1-66\cr
-  Date: \tab 2012-08-21\cr
-  License: \tab GPL-2\cr
+  Version: \tab 0.2-2\cr
+  Date: \tab 2013-08-12\cr
+  License: \tab GPL (>= 2)\cr
   LazyLoad: \tab yes\cr
 }
 }
@@ -33,6 +33,18 @@
   Maintainer: Ralph Scherer <scherer.ralph@mh-hannover.de>
 }
 \references{
+  Scherer, R. and Schaarschmidt, F. (2013) Simultaneous confidence intervals
+  for comparing biodiversity indices estimated from overdispersed count
+  data. \emph{Biometrical Journal} 55, 246--263.
+  
+  Evaluation of the methods in \code{\link{sbdiv}}
+  
+  Pallmann, P. et al. (2012) Assessing group differences in
+  biodiversity by simultaneously testing a user-defined selection of
+  diversity indices. \emph{Molecular ecology resources} 12, 1068--??78.
+
+  Evaluation of the methods in \code{\link{mcpHill}}
+  
   Westfall, P. H. and Young, S. S. (1993) Resampling-Based
     Multiple Testing: Examples and Methods for \eqn{p}--Value
     Adjustment. New York: Wiley.
@@ -59,12 +71,8 @@
 
   Corresponding method \code{\link{sbdiv}} with method \code{\link{asht}}
 
-  Scherer, R. (2010) Simultaneous Confidence Intervals for Biodiversity
-    Indices with Application to Overdispersed Multinomial Count Data
-  \url{http://www.biostat.uni-hannover.de/thesis.html}
-
-  \emph{Jost, L. (2008)} G(ST) and its relatives do not measure
-  differentiation. Molecular Ecology, 17, 4015-4026.
+  Jost, L. (2008) G(ST) and its relatives do not measure
+  differentiation. \emph{Molecular Ecology}, 17, 4015-4026.
 
   Corresponding method \code{\link{mcpHill}}
   }

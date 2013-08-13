@@ -23,7 +23,7 @@ mcpHill <- function(dataf, fact, align=FALSE, block, boots=5000, udmat=FALSE, us
         {return(exp(-1*sum(p_i*log(p_i))))}
         else
         {return((sum(p_i^q))^(1/(1-q)))}})}
-                                        # Tabelle mit transformierten Indices und Gruppenzugehörigkeit
+                                        # Tabelle mit transformierten Indices und Gruppenzugehoerigkeit
     hilltab <- function(bui){sapply(bui, function(bae){hillq(dat=dataf, q=bae)})}
     tabtab <- hilltab(qval)
     group <- factor(fact)
