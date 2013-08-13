@@ -19,8 +19,11 @@
   no sense in data sets with replicated samples due to overdispersion.
 }
 \usage{
-sbdiv(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett",
-"Tukey"), cmat = NULL, method = c("WYht", "tsht", "rpht", "asht"), conf.level =
+sbdiv(X, f, theta = c("Shannon", "Simpson"),
+type = c("Dunnett", "Tukey", "Sequen", "AVE", 
+                     "Changepoint", "Williams", "Marcus", 
+                     "McDermott", "UmbrellaWilliams", "GrandMean"),
+cmat = NULL, method = c("WYht", "tsht", "rpht", "asht"), conf.level =
 0.95, alternative = c("two.sided", "less", "greater"), R = 2000, base =
 1, ...)
 }
