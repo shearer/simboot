@@ -20,7 +20,7 @@
 }
 \usage{
 sbdiv(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett",
-"Tukey", "Sequen", "AVE", "Changepoint", "Williams", "Marcus", "McDermott", "UmbrellaWilliams", "GrandMean"), cmat = NULL, method = c("WYht", "tsht", "rpht", "asht"), conf.level =
+"Tukey"), cmat = NULL, method = c("WYht", "tsht", "rpht", "asht"), conf.level =
 0.95, alternative = c("two.sided", "less", "greater"), R = 2000, base =
 1, ...)
 }
