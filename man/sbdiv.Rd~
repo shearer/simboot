@@ -2,13 +2,13 @@
 \alias{sbdiv}
 \title{
   Perform simultaneous confidence intervals or adjusted p--values
-  for the Shannon and the Simpson index. 
+  for the Shannon and the Simpson index.
 }
 \description{
   Function \code{sbdiv} estimates simultaneous confidence intervals for the
   Shannon or the Simpson index. This function provides calculation of
-  Dunnett-type or Tukey-type confidence intervals as well as
-  self-defined contrast intervals. Simultaneous resampling confidence
+  several pre--defined contrasts for confidence intervals.Further
+  self-defined contrast are applicable. Simultaneous resampling confidence
   intervals are estimated according to the Algorithm of Besag et
   al. (1995) using method \code{\link{rpht}}, Westfall et al. (1993) using
   method \code{\link{WYht}} or similar to Beran (1988) using method
@@ -20,7 +20,7 @@
 }
 \usage{
 sbdiv(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett",
-"Tukey"), cmat = NULL, method = c("WYht", "tsht", "rpht", "asht"), conf.level =
+"Tukey", "Sequen", "AVE", "Changepoint", "Williams", "Marcus", "McDermott", "UmbrellaWilliams", "GrandMean"), cmat = NULL, method = c("WYht", "tsht", "rpht", "asht"), conf.level =
 0.95, alternative = c("two.sided", "less", "greater"), R = 2000, base =
 1, ...)
 }
@@ -38,7 +38,10 @@ sbdiv(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett",
     Biodiversity index. Options are Shannon and Simpson index.
   }
   \item{type}{
-    Type of comparison. Options are Dunnett-type as well as Tukey-type intervals.
+    Type of comparison. Options are Dunnett, Tukey, Sequen, AVE,
+    Changepoint, Williams, Marcus, McDermott, UmbrellaWilliams,
+    GrandMean intervals. We tested only Dunnett and Tukey contrasts in
+    simulations.
   }
   \item{cmat}{
     Optional self-defined contrast matrix. In case of using this
@@ -90,6 +93,12 @@ sbdiv(X, f, theta = c("Shannon", "Simpson"), type = c("Dunnett",
   \item{alternative }{Pre-specified alternative}
 }
 \references{
+  Scherer, R. and Schaarschmidt, F. (2013) Simultaneous confidence intervals
+  for comparing biodiversity indices estimated from overdispersed count
+  data. \emph{Biometrical Journal} 55, 246–263.
+
+  Evaluation of the methods in \code{sbdiv}
+  
   Westfall, P. H. and Young, S. S. (1993) Resampling-Based
     Multiple Testing: Examples and Methods for \eqn{p}--Value
     Adjustment. New York: Wiley.

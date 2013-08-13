@@ -54,7 +54,14 @@ mcpHill <- function(dataf, fact, align=FALSE, block, boots=5000, udmat=FALSE, us
      varC <- (cmat^2) %*% (varpool/ni)
      ti <- estC/sqrt(varC)
      return(ti)}
-    funcfunc <- function(abc, i, f, cmat, ni){apply(abc, 2, FUN=function(xx){tstatshort(mytab=xx, f=f, i=i, cmat=cmat, ni=ni)})}
+
+    if(length(qval)==1){
+        funcfunc <- function(abc, i, f, cmat, ni){tstatshort(mytab=abc, f=f, i=i, cmat=cmat, ni=ni)}
+    }
+    else{
+        funcfunc <- function(abc, i, f, cmat, ni){apply(abc, 2, FUN=function(xx){tstatshort(mytab=xx, f=f, i=i, cmat=cmat, ni=ni)})}
+    }
+
                                         # Westfall-Young / Bootstrap
     wyboot <- boot(epstabelle, funcfunc, R=boots, stype="i", f=group, cmat=cmat, ni=ni)
                                         # p-Werte
