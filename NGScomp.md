@@ -1,9 +1,17 @@
-Title
-========================================================
+Simultaneous comparisons of diversity indices estimated from metagenomic data
+==============================================================================
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **MD** toolbar button for help on Markdown).
+The following "GlobalPatterns" data set is from the [phyloseq package](http://joey711.github.io/phyloseq/) on Bioconductor. This packages allows the import of OTU-tables from qiime, mothur and other software packages for sequence data. Once the data is imported into R, it is stored in a phyloseq object, which is a specialized system of S4-classes. 
 
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+First, we have to install phyloseq with dependencies from Bioconductor if not already installed.
+
+
+```r
+# source('http://bioconductor.org/biocLite.R') biocLite('phyloseq')
+```
+
+
+Next, we have to load the phyloseq packages to get the GlobalPatterns data set. For pre-processing steps of the sequence data, see the phyloseq vignettes.
 
 
 ```r
@@ -55,6 +63,8 @@ GP <- prune_species(speciesSums(GlobalPatterns) > 0, GlobalPatterns)
 ```
 
 
+Phyloseq offers several functions to access variables in the object. 
+
 
 ```r
 sample_variables(GlobalPatterns)
@@ -73,7 +83,8 @@ sample_variables(GlobalPatterns)
 plot_richness(GP, x = "SampleType", color = "SampleType", shsi = TRUE)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+
 
 
 
