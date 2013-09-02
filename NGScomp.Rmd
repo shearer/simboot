@@ -3,16 +3,16 @@ Simultaneous comparisons of diversity indices estimated from metagenomic data
 
 The following "GlobalPatterns" data set is from the [phyloseq package](http://joey711.github.io/phyloseq/) on Bioconductor. This packages allows the import of OTU-tables from qiime, mothur and other software packages for sequence data. Once the data is imported into R, it is stored in a phyloseq object, which is a specialized system of S4-classes. 
 
-First, we have to install phyloseq with dependencies from Bioconductor if not already installed.
+First, we install phyloseq with dependencies from Bioconductor if not already installed.
 
-```{r}
-# source("http://bioconductor.org/biocLite.R")
-# biocLite("phyloseq")
+```{r eval = FALSE, prompt=TRUE}
+source("http://bioconductor.org/biocLite.R")
+biocLite("phyloseq")
 ```
 
-Next, we have to load the phyloseq packages to get the GlobalPatterns data set. For pre-processing steps of the sequence data, see the phyloseq vignettes.
+Next, we load the phyloseq packages to get the GlobalPatterns data set. For pre-processing steps of the sequence data, see the phyloseq vignettes.
 
-```{r}
+```{r, message=FALSE, warning=FALSE ,prompt=TRUE}
 library(phyloseq)
 data(GlobalPatterns)
 GP <- prune_species(speciesSums(GlobalPatterns) > 0, GlobalPatterns)
@@ -20,14 +20,14 @@ GP <- prune_species(speciesSums(GlobalPatterns) > 0, GlobalPatterns)
 
 Phyloseq offers several functions to access variables in the object. 
 
-```{r}
+```{r, prompt=TRUE}
 sample_variables(GlobalPatterns)
 ```
 
-```{r fig.width=10, fig.height=5}
+```{r, prompt=TRUE, fig.width=10, fig.height=5}
 plot_richness(GP, x = "SampleType", color = "SampleType", shsi = TRUE)
 ```
 
-
+Will be continued soon...
 
 
