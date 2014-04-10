@@ -7,3 +7,12 @@
 
 # Ignore backup files
 *~
+.Rproj.user
+
+
+simboot.Rcheck/*
+figure
+
+*.tar.gz
+*.Rbuildignore
+*.Rproj
