@@ -21,8 +21,8 @@
 \tabular{ll}{
   Package: \tab simboot\cr
   Type: \tab Package\cr
-  Version: \tab 0.2-4\cr
-  Date: \tab 2013-08-13\cr
+  Version: \tab 0.2-5\cr
+  Date: \tab 2014-04-10\cr
   License: \tab GPL (>= 2)\cr
   LazyLoad: \tab yes\cr
 }
@@ -30,7 +30,7 @@
 \author{
   Ralph Scherer\\
   Philip Pallmann\\
-  Maintainer: Ralph Scherer <scherer.ralph@mh-hannover.de>
+  Maintainer: Ralph Scherer <shearer.ra76@gmail.com>
 }
 \references{
   Scherer, R. and Schaarschmidt, F. (2013) Simultaneous confidence intervals
