@@ -16,3 +16,8 @@ figure
 *.tar.gz
 *.Rbuildignore
 *.Rproj
+
+simboot
+
+
+
