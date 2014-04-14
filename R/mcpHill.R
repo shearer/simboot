@@ -1,6 +1,6 @@
 mcpHill <- function(dataf, fact, align=FALSE, block, boots=5000, udmat=FALSE, usermat, mattype="Dunnett", dunbase=1, qval=seq(-1,3), opt="two.sided")
 {
-    require(boot, quietly=TRUE)
+    # require(boot, quietly=TRUE)
     # require(multcomp, quietly=TRUE)
     if (!is.data.frame(dataf)) {stop("dataf must be an object of class 'data.frame'.")}
     if (length(fact) != dim(dataf)[1]) {stop("The length of fact must equal the number of rows in dataf.")}
