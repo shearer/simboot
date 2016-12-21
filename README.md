@@ -1,5 +1,5 @@
 # [simboot](https://github.com/shearer/simboot)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/simboot)](http://cran.r-project.org/package=simboot/) ![downloads](http://cranlogs.r-pkg.org/badges/grand-total/simboot)
+[![Travis-CI Build Status](https://travis-ci.org/shearer/simboot.svg?branch=master)](https://travis-ci.org/shearer/simboot)  [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/simboot)](http://cran.r-project.org/package=simboot/) ![downloads](http://cranlogs.r-pkg.org/badges/grand-total/simboot)
 
 ## Corresponding publications
 The simultaneous confidence intervals for Shannon's and Simpson's indices are described and compared in the [SCfDI paper](http://www.ncbi.nlm.nih.gov/pubmed/23401312).  
