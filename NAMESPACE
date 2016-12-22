@@ -1,2 +1,4 @@
 exportPattern("^[[:alpha:]]+")
 import(boot, mvtnorm)
+importFrom("stats", "coefficients", "lm", "median", "predict",
+             "quantile", "residuals")
