@@ -1,3 +1,7 @@
+    CHANGES in `simboot' VERSION 0.2-6
+    
+    -   Fixed bug occurring when rows of observations are all-zero.
+
     CHANGES in `simboot' VERSION 0.2-5
 
     -  	new contact e-mail adress
