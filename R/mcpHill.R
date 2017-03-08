@@ -20,9 +20,9 @@ mcpHill <- function(dataf, fact, align=FALSE, block, boots=5000, udmat=FALSE, us
     {apply(dat, 1, function(da)
        {p_i <- (da/sum(da))[(da/sum(da))>0]
         if(q==1)
-        {return(exp(-1*sum(p_i*log(p_i))))}
+        {if(is.na(p_i[1])==TRUE){return(0)}else{return(exp(-1 * sum(p_i * log(p_i))))}}
         else
-        {return((sum(p_i^q))^(1/(1-q)))}})}
+        {if(is.na(p_i[1])==TRUE){return(0)}else{return((sum(p_i^q))^(1/(1 - q)))}}})}
                                         # Tabelle mit transformierten Indices und Gruppenzugehoerigkeit
     hilltab <- function(bui){sapply(bui, function(bae){hillq(dat=dataf, q=bae)})}
     tabtab <- hilltab(qval)
