@@ -12,7 +12,7 @@ To post feature requests or ask for help, try [the simboot Issue Tracker](https:
 
 ## Development
 
-To install the development version of the simboot package, it is easiest to use the [devtools](https://cran.r-project.org/web/packages/devtools/index.html) package:
+To install the development version of the simboot package, it is easiest to use the [devtools](https://cran.r-project.org/package=devtools/) package:
 
     install.packages("devtools")  # if needed..
     library(devtools)
