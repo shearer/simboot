@@ -11,10 +11,9 @@
 
 
 simboot.Rcheck/*
-figure
+figure 
 
 *.tar.gz
-*.Rbuildignore
 *.Rproj
 
 simboot
