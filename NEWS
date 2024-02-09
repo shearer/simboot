@@ -1,3 +1,7 @@
+    CHANGES in `simboot' VERSION 0.2-7
+    
+    -   Correct estThetaRow manual.
+
     CHANGES in `simboot' VERSION 0.2-6
     
     -   Fixed bug occurring when rows of observations are all-zero.
