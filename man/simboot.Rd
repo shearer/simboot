@@ -21,8 +21,8 @@
 \tabular{ll}{
   Package: \tab simboot\cr
   Type: \tab Package\cr
-  Version: \tab 0.2-6\cr
-  Date: \tab 2017-03-08\cr
+  Version: \tab 0.2-8\cr
+  Date: \tab 2024-02-09\cr
   License: \tab GPL (>= 2)\cr
   LazyLoad: \tab yes\cr
 }
@@ -30,7 +30,6 @@
 \author{
   Ralph Scherer\\
   Philip Pallmann\\
-  Maintainer: Ralph Scherer <shearer.ra76@gmail.com>
 }
 \references{
   Scherer, R. and Schaarschmidt, F. (2013) Simultaneous confidence intervals
@@ -76,4 +75,6 @@
 
   Corresponding method \code{\link{mcpHill}}
   }
-\keyword{ htest, nonparametric, multivariate }
+\keyword{htest}
+\keyword{nonparametric}
+\keyword{multivariate}
