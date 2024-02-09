@@ -19,6 +19,7 @@ estThetaRow(X, f, theta)
     Factorial variable containing treatment groups.
 }
   \item{theta}{
+    Shannon or Simpson index
 }
 }
 \keyword{ misc }
